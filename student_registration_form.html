@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form | KUST</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #e8f0ff, #f4f7fb);
+            color: #243047;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(28, 48, 80, 0.14);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #123b66, #176b87);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .header h1 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        form {
+            padding: 28px;
+        }
+
+        fieldset {
+            border: 1px solid #d9e2ef;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 22px;
+        }
+
+        legend {
+            color: #145477;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label, .group-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #34445c;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #fbfdff;
+            color: #243047;
+            font: inherit;
+        }
+
+        input:focus, select:focus {
+            outline: 2px solid #8bc6df;
+            border-color: #176b87;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            accent-color: #176b87;
+        }
+
+        input[type="file"] {
+            padding: 9px;
+            background: #ffffff;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            align-items: center;
+            min-height: 25px;
+        }
+
+        .options label {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: normal;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        .submit-btn {
+            background: #176b87;
+            color: white;
+        }
+
+        .reset-btn {
+            background: #e7edf5;
+            color: #243047;
+        }
+
+        .footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 12px;
+            padding: 0 20px 24px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 8px;
+            }
+
+            form {
+                padding: 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            fieldset {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Student Registration Form</h1>
+            <p>Kohat University of Science &amp; Technology (KUST)</p>
+            <p>Institute of Computing | CS371 Web Development</p>
+            <p>Assignment #02 — Fall 2026</p>
+        </header>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+            
+            <fieldset>
+                <legend>1. Personal Information</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName"
+                               placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fatherName">Father's Name</label>
+                        <input type="text" id="fatherName" name="fatherName"
+                               placeholder="Enter father's name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="group-label">Gender</span>
+                        <div class="options">
+                            <label><input type="radio" name="gender" value="Male" required> Male</label>
+                            <label><input type="radio" name="gender" value="Female"> Female</label>
+                            <label><input type="radio" name="gender" value="Other"> Other</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+          
+            <fieldset>
+                <legend>2. Contact Information</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="example@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="03XX-XXXXXXX" required>
+                    </div>
+                </div>
+            </fieldset>
+
+         
+            <fieldset>
+                <legend>3. Academic Information</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="registrationNumber">Registration Number</label>
+                        <input type="text" id="registrationNumber" name="registrationNumber"
+                               placeholder="Enter registration number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" name="department" required>
+                            <option value="">-- Select Department --</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Software Engineering">Software Engineering</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Information Technology">Information Technology</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="degree">Degree Program</label>
+                        <select id="degree" name="degree" required>
+                            <option value="">-- Select Degree Program --</option>
+                            <option value="BSCS">BS Computer Science (BSCS)</option>
+                            <option value="BSSE">BS Software Engineering (BSSE)</option>
+                            <option value="BSAI">BS Artificial Intelligence (BSAI)</option>
+                            <option value="MSCS">MS Computer Science (MSCS)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester</label>
+                        <select id="semester" name="semester" required>
+                            <option value="">-- Select Semester --</option>
+                            <option value="1st">1st Semester</option>
+                            <option value="2nd">2nd Semester</option>
+                            <option value="3rd">3rd Semester</option>
+                            <option value="4th">4th Semester</option>
+                            <option value="5th">5th Semester</option>
+                            <option value="6th">6th Semester</option>
+                            <option value="7th">7th Semester</option>
+                            <option value="8th">8th Semester</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+           
+            <fieldset>
+                <legend>4. Additional Fields</legend>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="photo">Upload Photograph</label>
+                        <input type="file" id="photo" name="photo" accept="image/*" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <span class="group-label">Select Programs</span>
+                        <div class="options">
+                            <label><input type="checkbox" name="programs[]" value="SE"> Software Engineering (SE)</label>
+                            <label><input type="checkbox" name="programs[]" value="CS"> Computer Science (CS)</label>
+                            <label><input type="checkbox" name="programs[]" value="AI"> Artificial Intelligence (AI)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"
+                               placeholder="Create a password" minlength="8" required>
+                    </div>
+                </div>
+            </fieldset>
+
+          
+            <div class="buttons">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
+
+        <p class="footer">CS371 Web Development | Assignment #02</p>
+    </main>
+</body>
+</html>
